@@ -12,6 +12,9 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+		<script src="plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+		<link rel="stylesheet" href="plugin/spreadsheet/spreadsheet.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -54,7 +57,7 @@
 					Verilog Part
 				</section>
 				<section>
-					<img class="fragment fade-up" width=1024px data-src="rtl_view.png">
+					<img class="fragment fade-up" width="1024px" data-src="rtl_view.png">
 					
 				</section>
 				<section>
@@ -67,16 +70,43 @@
 					Hardware
 				</section>
 				<section>
-					<img data-src="../hardware/Schematic.png">
+					<img data-src="Schematic.png">
 				</section>
 				<section>
-					<img data-src="../hardware/PCB.png">
+					<img data-src="PCB.png">
 				</section>
 				<section>
-					<img data-src="../hardware/3D.png">
+					<img data-src="3D.png">
 				</section>
 				<section>
-					<img data-src="../hardware/IMG_20200615_053454.jpg">
+					<img height="500px" data-src="IMG_20200615_053454.jpg">
+				</section>
+				<section>
+					<img height="500px" data-src="IMG_20200612_145902.jpg">
+				</section>
+				<section>
+					<img height="500px" data-src="IMG_20200612_145646.jpg">
+				</section>
+				<section>
+					<img height="500px" data-src="IMG_20200612_145836.jpg">
+				</section>
+				<section>
+					<img height="500px" data-src="IMG_20200608_230247.jpg">
+				</section>
+
+				<section data-auto-animate class="present">
+					
+					
+				</section>
+				
+				
+				<section  >
+					<div class="spreadsheet" data-rows="4" data-cols="2">
+						"N channel MOS", 12
+						"FD6288", 2
+						"ATX power supply", 1
+						"PCB", 2
+					</div>
 				</section>
 			</div>
 		</div>
@@ -93,7 +123,14 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+				dependencies: [{ src: 'plugin/spreadsheet/spreadsheet.js' }],
+				spreadsheet: {
+	 				 fontsize: 24,
+	 				 width: 300,
+	  				delimiter: ",",
+	  				precision: 4 // the maximum number of digits after the comma
+  },
 			});
 		</script>
 	</body>
