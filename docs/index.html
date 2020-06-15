@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet"> 
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 		<title>✨✨E S C ✨✨</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
@@ -14,7 +15,10 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 
 		<script src="plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+		
 		<link rel="stylesheet" href="plugin/spreadsheet/spreadsheet.css">
+		<link rel="stylesheet" href="plugin/fullscreen-img/fullscreen-img.css">
+		
 	</head>
 	<body>
 		<div class="reveal">
@@ -36,28 +40,29 @@
 				</section>
 
 				<section>
+					
 					<p>Verilog</p>
 					<p>FPGA</p>
 					<p class="fragment strike">computer architecture</p>
 					<p class="fragment strike">operating system</p>
-					
+
+					<img class="fragment" src="no.jpg" width="200">					
 					
 				</section>
-				<section>
-					<img data-src="no.jpg">
-				</section>
+				
 				<section>
 					<p class="fragment fade-up">Cause a fire(almost)</p>
 				</section>
 				<section>
-					<img data-src="yes.jpg">
+					<img  height="300" src="house-fire.jpg.webp">
+					<img class="r-frame" height="300" data-src="yes.jpg">
 				</section>
 
 				<section>
 					Verilog Part
 				</section>
-				<section>
-					<img class="fragment fade-up" width="1024px" data-src="rtl_view.png">
+				<section fullscreen-img="rtl_view.png" fullscreen-size="contain">
+					
 					
 				</section>
 				<section>
@@ -69,45 +74,50 @@
 				<section>
 					Hardware
 				</section>
-				<section>
-					<img data-src="Schematic.png">
+				<section fullscreen-img="Schematic.png" fullscreen-size="contain">
 				</section>
-				<section>
-					<img data-src="PCB.png">
+				<section fullscreen-img="PCB.png" fullscreen-size="contain">
 				</section>
-				<section>
-					<img data-src="3D.png">
+				<section fullscreen-img="3D.png" fullscreen-size="contain">
 				</section>
-				<section>
-					<img height="500px" data-src="IMG_20200615_053454.jpg">
+				<section fullscreen-img="IMG_20200615_053454.jpg" fullscreen-size="contain">
 				</section>
-				<section>
-					<img height="500px" data-src="IMG_20200612_145902.jpg">
+				<section fullscreen-img="IMG_20200612_145902.jpg" fullscreen-size="contain">
 				</section>
-				<section>
-					<img height="500px" data-src="IMG_20200612_145646.jpg">
+				<section fullscreen-img="IMG_20200612_145646.jpg" fullscreen-size="contain">
 				</section>
-				<section>
-					<img height="500px" data-src="IMG_20200612_145836.jpg">
+				<section fullscreen-img="IMG_20200612_145836.jpg" fullscreen-size="contain">
 				</section>
-				<section>
-					<img height="500px" data-src="IMG_20200608_230247.jpg">
+				<section fullscreen-img="IMG_20200608_230247.jpg" fullscreen-size="contain">
+					
 				</section>
 
-				<section data-auto-animate class="present">
-					
-					
-				</section>
+
 				
-				
-				<section  >
-					<div class="spreadsheet" data-rows="4" data-cols="2">
-						"N channel MOS", 12
-						"FD6288", 2
-						"ATX power supply", 1
-						"PCB", 2
-					</div>
+				<section data-auto-animate>
+					<table>
+						<tr>
+							<td>N channel MOS</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<td>FD6288</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td>ATX power supply</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>PCB</td>
+							<td>2</td>
+						</tr>
+					</table>
 				</section>
+				<section>
+					<iframe width="1500" height="630" src="https://www.youtube.com/embed/cAJ4PGK7CH4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+
 			</div>
 		</div>
 
@@ -115,6 +125,7 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -124,13 +135,18 @@
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-				dependencies: [{ src: 'plugin/spreadsheet/spreadsheet.js' }],
+				dependencies: [{ src: 'plugin/spreadsheet/spreadsheet.js' },
+							   { src: 'plugin/fullscreen-img/fullscreen-img.js' },
+				],
 				spreadsheet: {
 	 				 fontsize: 24,
 	 				 width: 300,
 	  				delimiter: ",",
 	  				precision: 4 // the maximum number of digits after the comma
-  },
+				},
+				autoAnimateEasing: 'ease-out',
+ 				autoAnimateDuration: 0.8,
+  				autoAnimateUnmatched: false
 			});
 		</script>
 	</body>
